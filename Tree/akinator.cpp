@@ -34,39 +34,47 @@ void GM::play_in(node *root_ptr)
 	if (root_ptr->yes != NULL)
 	{
 		cout << root_ptr->_key << endl;
-		string answer;
-		getline(cin, answer);
-		if (answer == "выход") return;
-		if (answer == "д") play_in(root_ptr->yes);
-		else play_in(root_ptr->no);
+		while (true)
+		{
+			string answer;
+			getline(cin, answer);
+			if (answer == "выход" || answer == "в" || answer == "В" || answer == "Выход" || answer == "ВЫХОД") return;
+			else if (answer == "д" || answer == "да" || answer == "Да" || answer == "ДА" || answer == "Д") play_in(root_ptr->yes);
+			else if (answer == "н" || answer == "нет" || answer == "Нет" || answer == "НЕТ" || answer == "Н") play_in(root_ptr->no);
+			else cout << "Некорректный ввод" << endl;
+		}
 	}
 	else
 	{
-		cout << "Ваш ответ " << root_ptr->_key << "\nЭто правильный ответ?" << endl;
-		string answer;
-		getline(cin, answer);
-		if (answer == "выход") return;
-		if (answer == "д")
+		cout << "\nВаш ответ " << root_ptr->_key << "\nЭто правильный ответ?" << endl;
+		while (true)
 		{
-			cout << "Сохранить изменения? [д] или [н] " << endl;
-			string answer1;
-			getline(cin, answer1);
-			if (answer == "д") save();
-			else return;
+			string answer;
+			getline(cin, answer);
+			if (answer == "выход" || answer == "в" || answer == "В" || answer == "Выход" || answer == "ВЫХОД") return;
+			else if (answer == "д" || answer == "да" || answer == "Да" || answer == "ДА" || answer == "Д")
+			{
+				cout << "\nСохранить изменения? [д] или [н] " << endl;
+				string answer1;
+				getline(cin, answer1);
+				if (answer == "д") save();
+				else return;
 
-			play_in(_memory._root);
-		}
-		else
-		{
-			_memory.insert(answer, root_ptr);
+				play_in(_memory._root);
+			}
+			else if (answer == "н" || answer == "нет" || answer == "Нет" || answer == "НЕТ" || answer == "Н")
+			{
+				_memory.insert(answer, root_ptr);
 
-			cout << "Сохранить изменения? [д] или [н] " << endl;
-			string answer1;
-			getline(cin, answer1);
-			if (answer == "д") save();
-			else return;
+				cout << "Сохранить изменения? [д] или [н] " << endl;
+				string answer1;
+				getline(cin, answer1);
+				if (answer == "д") save();
+				else return;
 
-			play_in(_memory._root);
+				play_in(_memory._root);
+			}
+			else cout << "Некорректный ввод" << endl;
 		}
 	}
 }

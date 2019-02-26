@@ -5,15 +5,16 @@
 #pragma warning(disable : 4996)
 using namespace std;
 
-typedef struct GM {
+class GM {
+private:
 	tree _memory;
-
+	void play_in(node *root_ptr);
+	void save_in(node *root_ptr);
+public:
 	GM(tree *opened = new tree(new node("Akinator")));
 
 	void menu();
 	void play();
-	void play_in(node *root_ptr);
 	void save();
-	void save_in(node *root_ptr);
 	void load();
-}GM;
+};
