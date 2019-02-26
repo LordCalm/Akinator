@@ -16,13 +16,3 @@ typedef struct tree {
 	void insert(string data, node *root_ptr);
 	tree(node *root);
 }tree;
-
-typedef struct GM {
-	tree _memory;
-	void play();
-	void play_in(node *root_ptr);
-	void save();
-	void save_in(node *root_ptr);
-	void load();
-	GM(tree *opened);
-}GM;

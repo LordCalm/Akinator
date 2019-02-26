@@ -21,9 +21,15 @@
     <ClCompile Include="play.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="akinator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tree.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Akinator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
