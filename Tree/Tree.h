@@ -14,5 +14,6 @@ typedef struct node {
 typedef struct tree {
 	node *_root;
 	void insert(string data, node *root_ptr);
+	tree();
 	tree(node *root);
 }tree;

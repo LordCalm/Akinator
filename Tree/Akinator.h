@@ -10,8 +10,9 @@ private:
 	tree _memory;
 	void play_in(node *root_ptr);
 	void save_in(node *root_ptr);
+	void load_in(FILE * file, node ** root_ptr);
 public:
-	GM(tree *opened = new tree(new node("Akinator")));
+	GM();
 
 	void menu();
 	void play();

@@ -6,6 +6,10 @@ node::node(string key) :
 	no(NULL)
 {}
 
+tree::tree() :
+	_root(nullptr)
+{}
+
 tree::tree(node *root) :
 _root(root)
 {}
